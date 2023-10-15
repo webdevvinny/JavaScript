@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      
+</head>
+<body>
+      <select style="color: rgb(60, 255, 0); font-size: 1.2em; font-weight: bold; font-family: cursive; border: 3px outset red; width: 150px; height: 40px; background-color: gold;" name="payment" id="selection" >
+            <option value="PayPall" style="color: rgb(25, 0, 255); font-size: 1.2em; font-weight: bold; font-family: cursive; border: 3px outset red; width: 150px; height: 40px; background-color: gold;" >PayPall</option>
+            <option selected value="M-Pesa" style="color: rgb(255, 8, 201); font-size: 1.2em; font-weight: bold; font-family: cursive; border: 3px outset red; width: 150px; height: 40px; background-color: gold;" >M-Pesa</option>
+            <option value="Credit Card" style="color: rgb(85, 215, 255); font-size: 1.2em; font-weight: bold; font-family: cursive; border: 3px outset red; width: 150px; height: 40px; background-color: gold;" >Credit Card</option>
+            <option value="Debit Card" style="color: rgb(124, 146, 0); font-size: 1.2em; font-weight: bold; font-family: cursive; border: 3px outset red; width: 150px; height: 40px; background-color: gold;" >Debit Card</option>
+            <option value="Co-Operative" style="color: rgb(209, 74, 74); font-size: 1.2em; font-weight: bold; font-family: cursive; border: 3px outset red; width: 150px; height: 40px; background-color: gold;" >Co-Operative</option>
+            <option value="Family Card" style="color: rgb(0, 0, 0); font-size: 1.2em; font-weight: bold; font-family: cursive; border: 3px outset red; width: 150px; height: 40px; background-color: gold;" >Family Card</option>
+      </select>
+
+      <button type="button" id="payment">Check payment</button>
+      <br>
+      <button onclick=' names(); '>Click Me!!</button>
+
+
+      <script>
+            document.querySelector("#payment").addEventListener('click', () => {
+                  let select = document.querySelector("#selection").value;
+                  if(select == 'PayPall'){
+                        alert("You choosed: " + select + ' Great Choice!!!!!!');
+                  }else if (select == 'M-Pesa') {
+                        alert('M-PESA is currently under maintainance!!!!!');
+                  }else{
+                        alert("You choosed: " + select);
+                  }
+//alert("Hello world!!!!!!!!")
+            })
+      </script>
+</body>
+</html>

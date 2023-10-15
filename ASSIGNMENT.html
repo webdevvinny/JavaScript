@@ -1,0 +1,47 @@
+<!D0CTYPE html>
+<html>
+     <head>
+            <title>CT101/G/15991/22</title>
+
+            <script>
+function checkResultHere() {
+      let color = document.getElementById("letter").value;
+      switch(color.toLowerCase()){
+      case "r":
+      document.getElementById("result").innerHTML = ("You choosed red");
+            break;
+      
+      case "g":
+      document.getElementById("result").innerHTML = ("You choosed green");
+            break;
+
+      case "b":
+      document.getElementById("result").innerHTML = ("You choosed black");
+            break;
+
+      case "w":
+      document.getElementById("result").innerHTML = ("You choosed white");
+            break;
+      default:
+      document.getElementById("result").innerHTML = ("Enter a valid color!!!!!!!!")
+}
+
+}
+            </script>
+      </head>
+      <style>
+            body{
+                  color: blue;
+                  padding: 100px;
+                  font-size: 30px;
+            }
+      </style>
+
+      <body>
+            <label>Enter the first character in the Kenyan Flag: </label> <br> <br>
+            <input type="text" id="letter" placeholder="CT101/G/15991/22"> <br> <br>
+            <button id="testColor" onclick=" checkResultHere() ">Click Here!!</button>
+            <p id="result"></p>
+           
+      </body>
+</html>

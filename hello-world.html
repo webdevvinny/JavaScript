@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>To Do List</title>
+
+      <style>
+            body{
+                  text-align: center;
+                  color: pink;
+                  background-color: royalblue;
+            }
+
+      </style>
+
+</head>
+
+<body>
+
+<h1 >TO DO LIST IN ARRAYS!!!!!</h1>
+<input type="text" class="js-name-input" placeholder="Enter Something in your List"><button onclick=" addToDo();">Add Element</button>
+
+<div class="itemsInHtml">
+
+</div>
+
+
+
+      <script>
+                  const toDoList = [
+                              'Make Dinner',
+                              'Make a WebSite'
+                  ];
+
+// function renderHtml() {
+//                   let toDoListHtml = '';
+//                   for(let i = 0; i < toDoList.length; i++){
+//                                                 const todo = toDoList[i];
+//                                                 const html = `
+//                                                 <p>${todo}</p>
+//                                                 `;
+
+//                                                 toDoListHtml += html;
+
+//                                           }
+//                   document.querySelector('.itemsInHtml').innerHTML = toDoListHtml;
+                 
+// }
+                  function addToDo() {
+                        
+                              const inputElement = document.querySelector('.js-name-input');
+                              const name = inputElement.value;
+                                    if(name == '' || name == null){
+                                          alert('Your list is empty!!!')
+                                    }else{
+                                          toDoList.push(name);
+                                          let toDoListHtml = '';
+                                                for(let i = 0; i < toDoList.length; i++){
+                                                      //const todo = ;
+                                                      
+                                                      toDoListHtml += `${toDoList[i]} <br>`;
+                                          }
+                  document.querySelector('.itemsInHtml').innerHTML = toDoListHtml;
+                 
+                                    
+                                          inputElement.value = '';
+                                    }
+                                  //  renderHtml();
+                  }
+
+      </script>
+
+</body>
+
+</html>

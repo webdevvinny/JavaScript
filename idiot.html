@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="delete record" onclick="msg()"/>  
+    <p id="demo"></p>
+    
+<script type="text/javascript">  
+let array = ['hello', 'javascript', 'tutorial', 'hell'];
+function msg(){  
+var v= confirm("Are u sure You want to delete the last element!!?");  
+if(v==true){  
+   array.splice(array.length - 1, 1);
+   document.getElementById('demo').innerHTML = array;
+   alert("You have sucessfully deleted!! " + array[array.length - 1] );  
+}  
+else{  
+alert("Mission aborted!!");  
+document.getElementById('demo').innerHTML = array;
+}  
+}  
+</script>  
+  
+
+</body>
+</html>

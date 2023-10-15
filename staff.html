@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <!-- Add meta tags and title as needed -->
+    <title>Site Made</title>
+
+   <style>
+      body {
+          background-image: url(backgroundPhoto.avif);
+          background-attachment: fixed;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          margin: 0;
+          padding: 0;
+      }
+  
+      nav {
+          background-color: #333;
+      }
+  
+      .navbar {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          width: 100%; /* Set the navigation bar width to 100% */
+      }
+  
+      .navbar li {
+          position: relative;
+          flex-grow: 1; /* Distribute width equally among items */
+      }
+  
+      .navbar a {
+          display: block;
+          text-decoration: none;
+          color: #5eff00;
+          font-weight: bolder;
+          font-size: 1.4em;
+          padding: 10px 0; /* Adjust padding as needed */
+          text-align: center; /* Center text horizontally */
+          transition: background-color .3s;
+      }
+  
+      .navbar a:hover {
+          background-color: #93a75e; /* Change the background color on hover */
+      }
+  
+      /* Dropdown styles */
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          width: 100%;
+          top: 100%;
+          left: 0;
+          z-index: 1;
+          margin: 0;
+          padding: 0;  /*Remove padding to eliminate space on the left */
+          list-style-type: none;
+      }
+  
+      .dropdown-content li{
+            padding: 0;
+            margin: 0;
+      }
+      .dropdown:hover .dropdown-content {
+          display: block;
+      }
+  
+      .dropdown-content li {
+          padding: 10px;
+          margin: 0; /* Remove margin to eliminate space on the left */
+      }
+
+      @media screen and (max-width: 700px){
+        .navbar{
+            flex-direction: column;
+        }
+        .dropdown-content{
+            background-color: #0a3d80;
+            width: 100%;
+        }
+      }
+
+
+
+        .timerBtn{
+            width: 80px;
+            height: 30px;
+            border: 3px solid;
+            border-radius: 12px;
+            background-color: #ee2a2a;
+            color: white;
+            cursor: pointer;
+            font-family: consolas, monospace;
+        }
+        #timeDisplay{
+            font-size: 75px;
+            color: #40c437;
+            font-family: consolas, monospace;
+        }
+        #timeContainer{
+            text-align: center;
+            border: 3px solid;
+            border-radius: 25px;
+            background-color: #00a56e;
+            width: 450px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+        
+</style>
+  
+
+</head>
+<body>
+    <nav>
+        <ul class="navbar" >
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Services</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Cloud Computing</a></li>
+                    <li><a href="#">Internet Application Programming</a></li>
+                    <li><a href="#">Artificial Intelligence</a></li>
+                    <li><a href="#">Machine Learning</a></li>
+                    <li><a href="#">PROCEDURAL PROGRAMMING</a></li>
+                    <li><a href="#">WEB SERVICES</a></li>
+                    <li><a href="#">OPERATING SYSTEMS</a></li>
+                    <li><a href="#">HACK THE BOX</a></li>
+                    <li><a href="#">DARK WEB</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                  <a href="#">Languages</a>
+                  <ul class="dropdown-content">
+                        <li><a href="#">C PROGRAMMING</a></li>
+                        <li><a href="#">C ++ PROGRAMMING</a></li>
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JAVASCRIPT</a></li>
+                        <li><a href="#">PHP</a></li>
+                        <li><a href="#">PYTHON</a></li>
+                        <li><a href="#">DJANGO</a></li>
+                    </ul>
+            </li>
+            <li class="dropdown">
+                  <a href="#">About Us</a>
+                  <ul class="dropdown-content">
+                        <li><a href="#">MISSION</a></li>
+                        <li><a href="#">VISION</a></li>
+                        <li><a href="#">MOTTO</a></li>
+                        <li><a href="#">ACHIVEMENTS</a></li>
+                        <li><a href="#">PURPOSE</a></li>
+                    </ul>
+            </li>
+            <li class="dropdown">
+                  <a href="#">Customers</a>
+                  <ul class="dropdown-content">
+                        <li><a href="#">GOOGLE</a></li>
+                        <li><a href="#">AMAZON</a></li>
+                        <li><a href="#">NETFLIX</a></li>
+                        <li><a href="#">YOUTUBE</a></li>
+                    </ul>
+            </li>
+            <li class="dropdown">
+                  <a href="#">Clients</a>
+                  <ul class="dropdown-content">
+                        <li><a href="#">AMAZON WEB SERVICES</a></li>
+                        <li><a href="#">CODE PEN</a></li>
+                        <li><a href="#">GEEKS FOR GEEKS</a></li>
+                        <li><a href="#">TUTORIALS POINT</a></li>
+                    </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+<div id="timeContainer">
+    <div id="timeDisplay">00:00:00</div>
+    <button id="startBtn" class="timerBtn">Start</button>
+    <button id="pauseBtn" class="timerBtn">Pause</button>
+    <button id="resetBtn" class="timerBtn">Reset</button>
+</div>
+
+      <script>
+
+            document.querySelector("ul").addEventListener("click", function () {
+            alert("This site is under construction!!!!!!!!!!!!");
+            }) 
+        
+const timeDisplay = document.querySelector("#timeDisplay");
+const startBtn = document.querySelector("#startBtn");
+const pauseBtn = document.querySelector("#pauseBtn");
+const resetBtn = document.querySelector("#resetBtn");
+
+let startTime = 0;
+let elapsedTime = 0;
+let currentTime = 0;
+let paused = true;
+let intervalId;
+let hrs = 0;
+let mins = 0;
+let secs = 0;
+
+startBtn.addEventListener("click", () => {
+    if(paused){
+        paused = false;
+        startTime = Date.now() - elapsedTime;
+        intervalId = setInterval(updateTime, 1000);
+    }
+});
+pauseBtn.addEventListener("click", () => {
+    if(!paused){
+        paused = true;
+        elapsedTime = Date.now() - startTime;
+        clearInterval(intervalId);
+    }
+});
+resetBtn.addEventListener("click", () => {
+    paused = true;
+    clearInterval(intervalId);
+    startTime = 0;
+    elapsedTime = 0;
+    currentTime = 0;
+    hrs = 0;
+    mins = 0;
+    secs = 0;
+    timeDisplay.textContent = "00:00:00";
+});
+
+function updateTime(){
+    elapsedTime = Date.now() - startTime;
+
+    secs = Math.floor((elapsedTime / 1000) % 60);
+    mins = Math.floor((elapsedTime / (1000 * 60)) % 60);
+    hrs = Math.floor((elapsedTime / (1000 * 60 * 60)) % 60);
+
+    secs = pad(secs);
+    mins = pad(mins);
+    hrs = pad(hrs);
+
+    timeDisplay.textContent = `${hrs}:${mins}:${secs}`;
+
+    function pad(unit){
+        return (("0") + unit).length > 2 ? unit : "0" + unit;
+    }
+}
+
+      </script>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY SITE</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            display: inline-block;
+            margin-right: 20px; /* Adjust the spacing between tabs */
+            color: green;
+            cursor: pointer;
+            padding: 10px;
+            background-color: pink;
+            border-left: 2px solid yellow;
+            text-align: center;
+        }
+
+        ul li:hover {
+            background-color: blue;
+            color: green;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%; /* Position the dropdown content below the parent */
+            left: 0;
+            box-sizing: border-box;
+            width: 200px;
+            display: none;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        @media screen and (max-width: 600px) {
+            ul {
+                display: block; /* Change to a vertical list on small screens */
+            }
+
+            ul li {
+                display: block;
+                margin: 10px 0; /* Adjust the spacing for small screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>Home Tab</li>
+            <li class="dropdown">Services
+                <div class="dropdown-content">
+                    <ul>
+                        <li>Cloud Computing</li>
+                        <li>Internet Application Programming</li>
+                        <li>Artificial Intelligence</li>
+                        <li>Machine Learning</li>
+                    </ul>
+                </div>
+            </li>
+            <li>Languages</li>
+            <li>About Us</li>
+            <li>Customers</li>
+            <li>Clients</li>
+        </ul>
+    </nav>
+    <br><br><br>
+
+        <input type="text">
+        <h2></h2>
+        <button onclick=" getElement()" type="button">Click to see saved staff!!!</button>
+        <h4></h4>
+        <h1></h1>
+    <script>
+        function site() {
+            alert("This site is under construction!!!!!!!!!!!!")
+        }
+
+        const input = document.querySelector('input'),
+        h2 = document.querySelector('h2');
+        
+
+        input.addEventListener('keyup', () => {
+            h2.innerHTML = localStorage.getItem('item');
+            localStorage.setItem('item', input.value);
+        });
+
+        function getElement(){
+            alert(localStorage.getItem('item'))
+        }
+
+        let array = ['jokes', 'seriuos', 'read', 'sum'];
+
+        let displayItems = array.forEach((value, index) => { 
+            
+            document.querySelector('h4').innerHTML += value + '  :  ' + (index + 1) + '<br>'});
+
+        setInterval(() => {
+            document.querySelector('h1').innerHTML = new Date().toTimeString();
+        }, 1000)
+        
+        // document.body.addEventListener('keydown', () => {
+        //     if(event.key === 'Enter') throw alert('You have just typed: ' + input.value);
+        //     if(event.key === 'Insert') document.querySelector('input').value == '';
+        //     alert(event.key)
+        // })
+    </script>
+</body>
+</html>

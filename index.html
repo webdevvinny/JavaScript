@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Learn Web Development</title>
+
+      <style>
+ body{
+      background-color: darkmagenta;
+      color: chartreuse;
+      font-size: 15px;
+      font-weight: bold;
+      /* font-family: 'Franklin Gothic Medium', 'Arial Narrow'; */
+ }
+      </style>
+</head>
+<body>
+      <h1 style="color: mediumslateblue;">LEARN WEB DEVELOPMENT THE HARD WAY!!!!!!</h1>
+      <p id="p1"></p>
+      <p id="p2"></p>
+      <p id="p3"></p>
+      <div id="print"></div>
+
+      <input type="text" id="detail" placeholder=" 😉😀😀😇😉😀  name!!!"> <button id="details">Add Details</button>
+      <p id="array"></p>
+      <p id="timeStamp"></p>
+      <p id="currentTime"></p>
+     
+
+
+
+
+<footer style="position: fixed; bottom: 0; font-size: 40px;">OPEN THE CONSOLE TO VIEW!!!!!!</footer>
+      <script>
+       
+       let name  = 'Vincent Okemwa';
+       let age = 989;
+       let student = true;
+
+       console.log(`
+FullName: ${name}
+Age: ${age} years old
+Student: ${student}
+       `)
+
+       console.log(age)
+
+            document.getElementById('p1').innerHTML = `FullName: ${name}`;
+            document.getElementById('p2').innerHTML = `Age: ${age} years old`;
+            document.getElementById('p3').innerHTML = `Student: ${student}`;
+      document.getElementById('details').onclick = function () {
+            
+            input =  document.getElementById('detail').value;
+
+            alert('😉😀😀😇😉😀 name!!!' + input.toUpperCase().trim().replaceAll(' ', '/'));
+
+            document.getElementById('detail').value = '';
+      }
+
+      let fruit = ['apple', 'Orange', 'banana']
+      let fruit1 = ['Meat', 'Spinach', 'Deal']
+      let thing = ['Bob', 'Lucky', 'Duane', 'Hello']
+      fruit.shift();
+      fruit.unshift('Mango')
+      fruit.pop();
+      fruit.push('Melon', 'Guava', 'Kiwi', fruit1, 'Learn', thing)
+
+      console.log(fruit[7][3])
+      console.log(fruit[0][0])
+      
+      fruit.forEach((v, i) => {console.log(v,i) /*, alert(v + ' in index: ' + i)*/})
+
+      for(f = 0; f < fruit.length; f ++){
+            console.log(fruit[f]);  
+      }
+
+      for(let fruits of fruit){
+            document.getElementById('array').innerHTML = fruit.sort().reverse() + '<br>';
+      }
+
+      const arrayed = ['jacob   op   ', 'Miller','bob', 'lucky', 'duane', 'hello']
+      //console.log(arrayed[0][1].toUpperCase() + arrayed[0] /* + arrayed.substring(0)*/);
+      arrayed.forEach((element,index) => {
+            console.log(element[0].toUpperCase() + element.substring(1).trim());
+      })
+
+      //for each method in arrays
+
+      let students = ['spongebob', 'patrick', 'squidward']
+students.forEach((element) => {           
+                  console.log(element[0].toUpperCase() + element.substring(1));
+      });
+
+      // map method in arrays
+ 
+      let numbers = [12, 32, 18, 16, 21, 17, 19, 190];
+
+      numbers.map((element, index) => {
+            console.log( element + ' to the power of 2 is: ' + Math.pow(element, 2) + ' at index ' +(index +1));
+      })
+
+      // filter method in arrays
+
+      let you = numbers.filter((element) => {
+            return element >= 18;
+      });
+
+      you.forEach( (element) => {
+            console.log(element);
+      })
+
+      // reduce() method in arrays
+
+      let total = numbers.reduce((element, value) => {return element + value})
+
+      console.log('The total is: ' + total)
+
+      // sorting arrays of numbers in an array
+
+      let sorted = numbers.sort((a, b) => {return a - b})
+
+      sorted.forEach((element) => { console.log(element)});
+
+      //shuffle elements in array
+
+      let cards = ['X','A', 'R', 'K', 'Q', 'W', 'B','N', 'C','I', 'T', 'P', 'G', 'Y', 'Z', 'L', 'D', 'H', 'F', 'O', 'E','J']
+
+      console.log(cards.sort());
+
+      // Map in arrays
+
+      const store =new Map(
+            [
+                  ['shirt', 230],
+                  ['socks', 50],
+                  ['shoes', 200],
+                  ['hat', 10]
+            ]
+      )
+
+      store.forEach((value, key) => {console.log(key, value)})
+      
+
+      // object oriented programming OBJECTS IN JAVASCRIPT
+
+      const car = {
+            model: 'mustang',
+            color: 'Red',
+            year: 2001,
+
+            drive: function () {
+                  console.log(`You drive a ${this.model}`);
+            }
+      }
+
+      car.drive();
+      console.log(car.model);
+      
+      const car1 = {
+            model: 'Chiron',
+            color: 'Golden',
+            year: 2024,
+
+            drive : function () {
+                  console.log(`You drive the ${this.model}`);
+            }
+      }
+
+      car1.drive();
+
+      // CLASSES IN JAVASCRIPT
+
+class player{
+      score = 0;
+      status(){
+            console.log("Not an active player")
+      }
+}
+
+//create object from the class
+
+const mySelf = new player();
+
+console.log(mySelf.score)
+mySelf.status();
+
+class parent {
+    constructor(name, age, kids){
+      this.fullname = name;
+      this.years = age;
+      this.children = kids
+    }
+
+    serious(){
+      return(this.fullname + ' is a serious parent')
+    }
+}
+
+const parent1 = new parent('Martin', 43, 3);
+
+console.log('Parent name is: ' + parent1.fullname + '. ' + parent1.fullname + ' is ' + parent1.years + ' years old with ' + parent1.children + ' children')
+console.log(parent1.serious());
+
+//using extends and super in classes and objects
+
+class university {
+      constructor(name, years, students){
+                  this.name = name;
+                  this.years = years;
+                  this.students = students
+      }
+
+}
+
+class university1 extends university{
+      constructor(name, years, students){
+            super(name, years, students)
+      }
+
+      mission(){
+            return `${this.name} is currently in development`
+      }
+}
+
+class university2 extends university{
+      constructor(name, years, students){
+            super(name, years, students)
+      }
+
+      mission(){
+            return `${this.name} is a very old schools been there in the market for along time!!`
+      }
+}
+
+class university3 extends university{
+      constructor(name, years, students){
+            super(name, years, students)
+      }
+
+      mission(){
+            return `${this.name} is the most developing university so far in their own minds!! 😀😀😀🚾`
+      }
+}
+
+const kyu = new university1('Kirinyaga University', 7, 10300);
+const un = new university2('University of Nairobi', 29, 26050);
+const mku = new university3('Mount Kenya University', 14, 12030);
+
+console.log(kyu.name + ' years in market: ' + kyu.years + ' Number of students: ' + kyu.students)
+console.log(un.name + ' years in market: ' + un.years + ' Number of students: ' + un.students)
+console.log(mku.name + ' years in market: ' + mku.years + ' Number of students: ' + mku.students)
+
+console.log(kyu.mission());
+console.log(un.mission());
+console.log(mku.mission());
+
+class waterTank{
+      constructor(name){
+            this._name = name;
+            this._full = 30;
+      }
+      get name(){
+            return `${this._name}hp`;
+      }
+      get full(){
+            return `${this._full}L `; //(${this._gas/50 *100}%)
+      }
+      set full(value){
+            if(value > 1000){
+                  value = 1000;
+            }else if(value < 0){
+                  value = 0;
+            }
+      this._full = value;
+      }
+}
+
+const tank = new waterTank('Simba Tank')
+tank.full = -20;
+console.log(tank.full);
+console.log(tank._name);
+
+class Cars{
+      constructor(power){
+            this._gas = 25;
+            this._power = power;
+      }
+      get power(){
+            return `${this._power}hp`;
+      }
+      get gas(){
+            return `${this._gas}L (${this._gas/50 *100}%)`;
+      }
+      set gas(valued){
+            if(valued > 1000){
+                  valued = 1000;
+            }
+            else if(valued < 0){
+                  valued = 0;
+            }
+            this._gas = valued;
+      } 
+}
+
+let cars = new Cars(400)
+
+car.gas = -1000000;
+
+console.log(cars.power);
+console.log(cars.gas);
+
+class Cards {
+      constructor(value, suit){
+            this.value = value;
+            this.suit = suit;
+      }
+}
+
+let cards1 = [
+new Cards('A', 'Hearts'),
+new Cards('B', 'Spades'),
+new Cards('C', 'Diamonds'),
+new Cards('D', 'Clubs'),
+new Cards('E', 'Banks'),
+]
+cards1.forEach((card) => {console.log(card.value, card.suit)})
+
+/*
+
+let count = 0;
+let num = Number(prompt('Enter a number? and then open the console!!!'));
+let dismiss = setInterval(countNum, 1000);
+function countNum(){
+      count +=1;
+      console.log(count);
+      if(count >= num){
+            clearInterval(dismiss);
+            console.log('HAPPPY DAY SEE YOU THEN!!!!!!!')
+      }
+}
+
+*/
+
+//a simple time project
+
+
+//setInterval(getSeconds,1000)
+
+const myLabel = document.getElementById('timeStamp');
+
+setInterval(getDate, 1000);
+
+function getDate(){
+let time = new Date();
+let hour = time.getHours();
+let minute = time.getMinutes();
+let seconds = time.getSeconds()
+
+let amPm = hour >= 12 ? 'PM' : 'AM'
+
+      if(seconds.toString().length <= 1){
+            myLabel.innerHTML =  `The time is: ${hour}:${minute}:0${seconds}${amPm}`; 
+      }else if(hour.toString().length <= 1){
+            myLabel.innerHTML =  `The time is: 0${hour}:${minute}:${seconds}${amPm}`;
+      }
+      else if(minute.toString().length < 2 ){
+            myLabel.innerHTML =  `The time is: ${hour}:0${minute}:${seconds}${amPm}`;
+      }
+      else {
+            myLabel.innerHTML =  `The time is: ${hour}:${minute}:${seconds}${amPm}`;
+      }
+}
+
+// THE EASY APPROACH
+setInterval(() => {
+	document.getElementById('currentTime').innerHTML = new Date().toTimeString();
+}, 1000);
+
+console.log('hello')
+
+      </script>
+</body>
+</html>

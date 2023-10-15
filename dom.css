@@ -1,0 +1,67 @@
+#sub{
+      padding: 10px;
+      border-radius: 20px;
+      box-sizing: border-box;
+      box-shadow: 2px 3px 4px pink;
+      color: blue;
+      font-weight: bolder;
+      font-size: 30px;
+}
+
+#sub:active{
+      background-color: aqua;
+      transform: translateY(4px);
+}
+
+#js{
+
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+      position: relative;
+      left: auto;
+      top: 0;
+      transition: background-color 3s;
+}
+
+#tip{
+      font-size: 120px;
+      font-weight: bolder;
+      position: absolute;
+      bottom: 0;
+      padding: 0;
+      margin: 0;
+      right: 0;
+      transition: color 3s;
+}
+
+#js:hover{
+      background-color: aquamarine;
+      
+}
+
+#tip:hover{
+      color: green;
+}
+
+#test{
+      width: 370px;
+      transition: font-size 2s, width 2s;
+     
+}
+
+#test:hover{
+      font-size: 17px;
+      font-weight: bold;
+      background-color: aqua;
+      width: 400px;
+}
+
+#chooseColor{
+      width: 200px;
+      height: 200px;
+}
+
+#not, option{
+      padding: 10px;
+}

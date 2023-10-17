@@ -1,5 +1,5 @@
 
-/*
+
 let time = new Date();
 let hour = time.getHours();
 let minute = time.getMinutes();
@@ -60,7 +60,7 @@ let arr1 = [];
 
 console.log(Array(100).fill().map((q, i) => i + 1));
 
-*/
+
 
 /*
 let count = 11;

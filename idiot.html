@@ -6,11 +6,44 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="button" value="delete record" onclick="msg()"/>  
+    <input type="button" id="none" value="delete record" onclick="msg()"/>  
     <p id="demo"></p>
     <br><br>
     <p  style="border-bottom: 4px solid blue; width: 400px;" id="keypress"></p>
-    
+
+    <!-- <input type="checkbox" name="apple" id="apple" value="Apples" >Apples -->
+    <input type="radio" name="apple" id="apple0" >Apples0
+    <input type="radio" name="apple" id="apple1" >Apples1
+    <input type="radio" name="apple" id="apple2" >Apples2
+
+    <ul>
+            <li>None of the above!!!</li>
+            <li>None of the above!!!</li>
+            <li>None of the above!!!</li>
+            <li>None of the above!!!</li>
+    </ul>
+
+    <ul>
+            <li>None of the above!!!</li>
+            <li>None of the above!!!</li>
+            <li>None of the above!!!</li>
+            <li>None of the above!!!</li>
+    </ul>
+
+    <ul class="noneq">
+            <li>None of the above!!!</li>
+            <li>None of the above!!!</li>
+            <li>None of the above!!!</li>
+            <li>None of the above!!!</li>
+    </ul>
+
+    <ul>
+            <li>None of the above!!!</li>
+            <li>None of the above!!!</li>
+            <li>None of the above!!!</li>
+            <li>None of the above!!!</li>
+    </ul>
+
 <script type="text/javascript">  
 
 let array = ['hello', 'javascript', 'tutorial', 'hell'];
@@ -30,7 +63,18 @@ document.getElementById('demo').innerHTML = array;
 }  
 }  
 
+document.getElementById('keypress').onmouseover = () => {
+    document.getElementById('keypress').innerHTML = 'HARD TO KNOW!!'
+}
+
 console.log(array.length);
+
+const nameTag = document.createElement('h1');
+nameTag.textContent = window.prompt('Enter a name')
+
+document.body.append(nameTag);
+
+document.body.addEventListener('keydown', () => { alert(event.key)})
 
 </script>  
   

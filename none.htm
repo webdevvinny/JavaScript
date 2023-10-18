@@ -93,186 +93,116 @@
       </select>
 
 
-      <!DOCTYPE html>
-<html>
-<head>
-
-</head>
-<body>
-
 <div class='output'>
 
- <ul>
- 
- </ul>
-
-<p></p>
-
-</div>
-
-
-<p class='test' style='margin: 10px; color: blue; padding: 10px;'></p>
-<script>
-/*
-const list = document.querySelector('.output ul');
-list.innerHTML = '';
-const cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL'];
-
-for (const city of cities) {
-
-  const result = city[0].toUpperCase() + city.slice(1).toLowerCase();
-  const listItem = document.createElement('li');
-  listItem.textContent = result;
-  list.appendChild(listItem);
-}
-
-let confused = 'MAN675847583748sjt567654;Manchester Piccadilly';
-
-let one = confused.slice(0, confused.indexOf('6'));
-
-let two = confused.slice(confused.lastIndexOf('M'));
-
-let three = one + ': ' + two;
-alert(three);
-
-document.getElementById('attack').innerHTML = three;
-*/
-
-/*
-const list = document.querySelector('.output ul');
-list.innerHTML = '';
-const stations = ['MAN675847583748sjt567654;Manchester Piccadilly',
-                  'GNF576746573fhdg4737dh4;Greenfield',
-                  'LIV5hg65hd737456236dch46dg4;Liverpool Lime Street',
-                  'SYB4f65hf75f736463;Stalybridge',
-                  'HUD5767ghtyfyr4536dh45dg45dg3;Huddersfield'];
-
-for (const station of stations) { 
-
-  const result = station.slice(0, 3) + ': ' + station.slice(station.lastIndexOf(';') + 1) ;
-  const listItem = document.createElement('li');
-  listItem.textContent = result;
-  list.appendChild(listItem);
-}
-
-
-let arr = [3, 4, 6, 1, 9, [12, 16, 19, 11, 10,[34,38,39,[21, 29, 27, 20, 24]]]]
-
-alert(arr[5][5][3][2]);
-
-*/
-const list = document.querySelector('.output ul');
-const totalBox = document.querySelector('.output p');
-let total = 0;
-list.innerHTML = '';
-totalBox.textContent = '';
-// number 1
-let products = [
-                'Underpants:6.99',
-                'Socks:5.99',
-                'T-shirt:14.99',
-                'Trousers:31.99',
-                'Shoes:23.99'
-]
-// number 2
-for (const product of products ){
-
-	 var  name = product.slice(0, product.indexOf(':'));
-     var price = Number(product.slice(product.indexOf(':') + 1));
-    
-    
-    //let s = list.innerHTML += name;
-   //document.querySelector('.test').innerHTML += name + ': costs => ' + ' <span> &euro; </span>' + price + '<br>' ;
-   
-  
-   
-
-  // number 3
-  
- // const subArray = product.split(':');
- // const name = subArray[0];
-  //const price = Number(subArray[1]);
-  total += price;
-  const itemText = `${name} — $${price}`;
-  
- // alert(subArray)
-  
-  // number 4
-
-  // number 5
- // let itemText =  0;
-  const listItem = document.createElement('li');
-  listItem.textContent = itemText;
-  list.appendChild(listItem);
-// number 6
- 
-totalBox.textContent = 'Total: $ ' + total.toFixed(2);
-
-}
-//
-</script>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <ul>
+      
+      </ul>
+     
+     <p></p>
+     
+     </div>
+     
+     
+     <p class='test' style='margin: 10px; color: blue; padding: 10px;'></p>
+     <script>
+     /*
+     const list = document.querySelector('.output ul');
+     list.innerHTML = '';
+     const cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL'];
+     
+     for (const city of cities) {
+     
+       const result = city[0].toUpperCase() + city.slice(1).toLowerCase();
+       const listItem = document.createElement('li');
+       listItem.textContent = result;
+       list.appendChild(listItem);
+     }
+     
+     let confused = 'MAN675847583748sjt567654;Manchester Piccadilly';
+     
+     let one = confused.slice(0, confused.indexOf('6'));
+     
+     let two = confused.slice(confused.lastIndexOf('M'));
+     
+     let three = one + ': ' + two;
+     alert(three);
+     
+     document.getElementById('attack').innerHTML = three;
+     */
+     
+     /*
+     const list = document.querySelector('.output ul');
+     list.innerHTML = '';
+     const stations = ['MAN675847583748sjt567654;Manchester Piccadilly',
+                       'GNF576746573fhdg4737dh4;Greenfield',
+                       'LIV5hg65hd737456236dch46dg4;Liverpool Lime Street',
+                       'SYB4f65hf75f736463;Stalybridge',
+                       'HUD5767ghtyfyr4536dh45dg45dg3;Huddersfield'];
+     
+     for (const station of stations) { 
+     
+       const result = station.slice(0, 3) + ': ' + station.slice(station.lastIndexOf(';') + 1) ;
+       const listItem = document.createElement('li');
+       listItem.textContent = result;
+       list.appendChild(listItem);
+     }
+     
+     
+     let arr = [3, 4, 6, 1, 9, [12, 16, 19, 11, 10,[34,38,39,[21, 29, 27, 20, 24]]]]
+     
+     alert(arr[5][5][3][2]);
+     
+     */
+     const list = document.querySelector('.output ul');
+     const totalBox = document.querySelector('.output p');
+     let total = 0;
+     list.innerHTML = '';
+     totalBox.textContent = '';
+     // number 1
+     let products = [
+                     'Underpants:6.99',
+                     'Socks:5.99',
+                     'T-shirt:14.99',
+                     'Trousers:31.99',
+                     'Shoes:23.99'
+     ]
+     // number 2
+     for (const product of products ){
+     
+            var  name = product.slice(0, product.indexOf(':'));
+          var price = Number(product.slice(product.indexOf(':') + 1));
+         
+         
+         //let s = list.innerHTML += name;
+        //document.querySelector('.test').innerHTML += name + ': costs => ' + ' <span> &euro; </span>' + price + '<br>' ;
+        
+       
+        
+     
+       // number 3
+       
+      // const subArray = product.split(':');
+      // const name = subArray[0];
+       //const price = Number(subArray[1]);
+       total += price;
+       const itemText = `${name} — $${price}`;
+       
+      // alert(subArray)
+       
+       // number 4
+     
+       // number 5
+      // let itemText =  0;
+       const listItem = document.createElement('li');
+       listItem.textContent = itemText;
+       list.appendChild(listItem);
+     // number 6
+      
+     totalBox.textContent = 'Total: $ ' + total.toFixed(2);
+     
+     }
+     //
+     </script>
 </body>
 </html>
